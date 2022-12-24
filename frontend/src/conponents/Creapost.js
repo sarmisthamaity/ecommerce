@@ -48,7 +48,7 @@ const CreatePost = () => {
         
         axios.post('http://127.0.0.1:3455/blogs', formData, config)
             .then(response => {
-                history.push('/')
+                history.push('/view')
 
             }).catch(err => {
                 console.log(err);

@@ -32,8 +32,10 @@ const Login = () => {
         }
 
         const resp = await axios.post("http://127.0.0.1:3455/login", data);
-        // console.log('resp.data', resp.data.login.existUser.userType)
-
+        // console.log('resp.data', resp.data)
+        if(!(resp.data.login.token)) {
+            history.push('/register')
+        }
         if(resp.data.success === true) {
             localStorage.setItem('Token', resp.data.login.token)
             localStorage.setItem('isAuthenticated', true)

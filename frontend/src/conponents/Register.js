@@ -33,6 +33,7 @@ const Register = () => {
         // console.log('data', data);
 
         const resp = await axios.post("http://127.0.0.1:3455/signup", data);
+        
         // console.log(resp.data.user.userType, 'pppppppppppppppppppppppp');
 
     }
