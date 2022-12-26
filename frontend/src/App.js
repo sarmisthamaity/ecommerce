@@ -6,6 +6,8 @@ import Register from './conponents/Register';
 import Login from './conponents/Login';
 import CreatePost from './conponents/Creapost';
 import Details from './conponents/Details';
+// import Demo from './conponents/Demo';
+import Purchase from './conponents/Purchase';
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -17,6 +19,9 @@ function App() {
         <Route exact path='/register' component={Register}></Route>
         <Route exact path='/admin' component={CreatePost}></Route>
         <Route exact path='/view' component={Details}></Route>
+        <Route exact path='/purchase' component={Purchase}></Route>
+
+
         
       </Switch>
     </>

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Nav = () => {
+
+    const [search, setSearch] = useState('')
+
+    // console.log('search', search)
 
     return (
         <header>
@@ -13,13 +17,18 @@ const Nav = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                <a className="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
                         </ul>
-                        {/* <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <form className="d-flex" role="search">
+                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" 
+                                onChange={event => {
+                                    const { value } = event.target;
+                                    setSearch(value)
+                                }}
+                                />
                                 <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form> */}
+                        </form>
                     </div>
                 </div>
             </nav>

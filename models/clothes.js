@@ -27,6 +27,6 @@ const sellThingSchema = new mongoose.Schema({
     }
 });
 
-const userModel = new mongoose.model('sellThings', sellThingSchema);
+const clothesModel = new mongoose.model('sellThings', sellThingSchema);
 
-module.exports = userModel;
+module.exports = clothesModel;
