@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from 'axios';
 
 const Register = () => {
@@ -9,6 +10,8 @@ const Register = () => {
         email: "",
         password: ""
     })
+
+    const history = useHistory();
 
     const setInputValue = (e) => {
         const {name, value} = e.target;
@@ -30,11 +33,13 @@ const Register = () => {
             email,
             password,
         }
-        // console.log('data', data);
 
         const resp = await axios.post("http://127.0.0.1:3455/signup", data);
-        
-        // console.log(resp.data.user.userType, 'pppppppppppppppppppppppp');
+
+
+        if(resp.data.status === 200) {
+            history.push('/')
+        }
 
     }
 
